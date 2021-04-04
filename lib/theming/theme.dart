@@ -22,21 +22,23 @@ ThemeData theme() {
           shadows: [
             Shadow(
               blurRadius: 20,
-              color: Color(0xffffff22),
+              color: Color(0xffffffff),
             )
           ],
         ),
-        bodyText1: GoogleFonts.roboto(
-          fontSize: 16,
-          fontWeight: FontWeight.w200,
-          letterSpacing: 2,
-          color: Colors.white,
-          // shadows: [
-          //   Shadow(
-          //     blurRadius: 20,
-          //     color: Color(0xffffff22),
-          //   )
-          // ],
-        )),
+        headline2: GoogleFonts.montserrat(),
+        bodyText1: GoogleFonts.muli(
+            fontSize: 16,
+            fontWeight: FontWeight.w100,
+            // letterSpacing: 2,
+            color: Colors.white,
+            textStyle: TextStyle(textBaseline: TextBaseline.alphabetic)
+            // shadows: [
+            //   Shadow(
+            //     blurRadius: 20,
+            //     color: Color(0xffffff22),
+            //   )
+            // ],
+            )),
   );
 }
