@@ -3,9 +3,20 @@ import 'package:alisyed_com/theming/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
+import 'package:url_strategy/url_strategy.dart';
+import 'dart:html';
+
+const String HomeRoute = '/home';
+const String AboutRoute = '/about';
+const String EpisodesRoute = '/episodes';
+const String EpisodeDetailsRoute = '/episode';
 
 void main() {
+  // setPathUrlStrategy();
+  setHashUrlStrategy();
   runApp(MyApp());
+  var url = window.location.href;
+  print(url);
 }
 
 class MyApp extends StatelessWidget {

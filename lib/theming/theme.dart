@@ -27,6 +27,8 @@ ThemeData theme() {
           ],
         ),
         headline2: GoogleFonts.montserrat(),
+        headline3: GoogleFonts.arvo(
+            color: Color(0xffffff22), fontWeight: FontWeight.w700),
         bodyText1: GoogleFonts.muli(
             fontSize: 16,
             fontWeight: FontWeight.w100,
