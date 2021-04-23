@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Work22 extends StatefulWidget {
-  @override
-  _Work22State createState() => _Work22State();
-}
-
-class _Work22State extends State<Work22> {
+class Work24 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,8 +11,7 @@ class _Work22State extends State<Work22> {
       child: Column(
         children: [
           Expanded(
-              child: Image.asset(
-                  'lib/assets/pngs/developers_responsibilities.png')),
+              child: Image.asset('lib/assets/pngs/developer_softskills.png')),
           // Center(
           //   child: Text('lib/assets/pngs/developers_responsibilities.png'),
           // ),
