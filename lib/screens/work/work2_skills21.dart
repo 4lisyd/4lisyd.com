@@ -139,14 +139,13 @@ class _Work21State extends State<Work21> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Expanded(
-                      child: Text(
-                        'Software Dev.',
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.headline3.copyWith(
-                              fontSize: 22,
-                            ),
-                      ),
+                    Text(
+                      'Software Dev.',
+                      textAlign: TextAlign.center,
+                      maxLines: 1,
+                      style: Theme.of(context).textTheme.headline3.copyWith(
+                            fontSize: 22,
+                          ),
                     ),
                     // Container(
                     //   height:
@@ -159,14 +158,16 @@ class _Work21State extends State<Work21> {
                     AutoSizeText(
                       'Cross-platform application development for numerous platform with cunning simplicity and consistent thoughout.',
                       style: Theme.of(context).textTheme.bodyText1.copyWith(
-                            fontSize: 14,
+                            fontSize: 11,
                           ),
+                      textAlign: TextAlign.center,
+
+                      // minFontSize: 8,
+                      maxLines: 5,
                     ),
-                    Expanded(child: addSoftwareDevSkill(context, 'iOS')),
-                    Expanded(child: addSoftwareDevSkill(context, 'Android')),
-                    Expanded(
-                      child: addSoftwareDevSkill(context, 'Windows, Mac OS'),
-                    ),
+                    addSoftwareDevSkill(context, 'iOS'),
+                    addSoftwareDevSkill(context, 'Android'),
+                    addSoftwareDevSkill(context, 'Windows, Mac OS'),
                   ],
                 ),
               ),
@@ -185,9 +186,11 @@ class _Work21State extends State<Work21> {
                 alignment: Alignment.center,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       'UX/UI Design.',
+                      textAlign: TextAlign.center,
                       maxLines: 1,
                       style: Theme.of(context).textTheme.headline3.copyWith(
                             fontSize: 22,
@@ -204,8 +207,9 @@ class _Work21State extends State<Work21> {
                     AutoSizeText(
                       'I value simple content structure, clean design patterns, and thoughtful interactions.',
                       style: Theme.of(context).textTheme.bodyText1.copyWith(
-                            fontSize: 14,
+                            fontSize: 11,
                           ),
+                      maxLines: 4,
                     ),
                     addSoftwareDevSkill(context, 'Web'),
                     addSoftwareDevSkill(context, 'Mobile Apps'),
@@ -233,6 +237,7 @@ class _Work21State extends State<Work21> {
                   children: [
                     Text(
                       'Web Dev.',
+                      textAlign: TextAlign.center,
                       maxLines: 1,
                       style: Theme.of(context).textTheme.headline3.copyWith(
                             fontSize: 22,
@@ -246,10 +251,10 @@ class _Work21State extends State<Work21> {
                     //     // colorBlendMode: BlendMode.color,
                     //   ),
                     // ),
-                    Text(
+                    AutoSizeText(
                       'I like to code things from scratch, and enjoy bringing ideas to life in the browser.',
                       style: Theme.of(context).textTheme.bodyText1.copyWith(
-                            fontSize: 14,
+                            fontSize: 11,
                           ),
                     ),
                     addSoftwareDevSkill(context, 'Html/Css/Javascript'),
@@ -275,12 +280,16 @@ Widget addSoftwareDevSkill(BuildContext context, String skillName) {
     children: [
       Icon(
         Icons.add,
-        size: 20,
+        size: 15,
         color: Theme.of(context).accentColor,
       ),
-      Text(
+      AutoSizeText(
         skillName,
-        style: Theme.of(context).textTheme.bodyText1,
+        maxLines: 1,
+        minFontSize: 12,
+        style: Theme.of(context).textTheme.bodyText1.copyWith(
+              fontSize: 12,
+            ),
       ),
     ],
   );

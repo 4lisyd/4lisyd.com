@@ -40,6 +40,8 @@ flutter:
     - assets/images/myPortraits/portraitDistortion.png
     - lib/assets/animations/18123-developer.json
     - lib/assets/pngs/
+    - lib/assets/pngs/socialMedia_pngs/
+  
   
     
 
