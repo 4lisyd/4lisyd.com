@@ -4,14 +4,14 @@ class Work24 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: Theme.of(context).accentColor,
       child: Container(
         decoration: BoxDecoration(
           color: Color(0xfffcfff3),
-          // borderRadius: BorderRadius.only(
-          //   bottomLeft: Radius.circular(100),
-          //   bottomRight: Radius.circular(100),
-          // ),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(100),
+            bottomRight: Radius.circular(100),
+          ),
         ),
         height:
             MediaQuery.of(context).size.height - AppBar().preferredSize.height,

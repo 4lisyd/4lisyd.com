@@ -52,10 +52,10 @@ class _WorkState extends State<Work> {
               controller: homeScrollController,
               child: Column(
                 children: [
-                  // Work1(),
-                  // Work21(),
-                  // Work22(),
-                  // Work23(),
+                  Work1(),
+                  Work21(),
+                  Work22(),
+                  Work23(),
                   Work24(),
                   Work31(),
                 ],

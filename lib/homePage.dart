@@ -11,59 +11,98 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String currentBuildWhat = 'home';
+  bool isMobile;
 
   @override
   Widget build(BuildContext context) {
+    isMobile = MediaQuery.of(context).size.width < 600;
     return Scaffold(
+      drawerScrimColor: Colors.black.withOpacity(.3),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              child: Text('drawer header'),
+            ),
+            SimpleButton1('Home', () {
+              setState(() {
+                currentBuildWhat = 'home';
+              });
+            }, currentBuildWhat == 'home'),
+            SimpleButton1('Travel', () {
+              setState(() {
+                currentBuildWhat = 'travel';
+              });
+            }, currentBuildWhat == 'travel'),
+            SimpleButton1('People', () {
+              setState(() {
+                currentBuildWhat = 'people';
+              });
+            }, currentBuildWhat == 'people'),
+            SimpleButton1('Work', () {
+              setState(() {
+                currentBuildWhat = 'work';
+              });
+            }, currentBuildWhat == 'work'),
+            SimpleButton1('About', () {
+              setState(() {
+                currentBuildWhat = 'about';
+              });
+            }, currentBuildWhat == 'about'),
+          ],
+        ),
+      ),
       appBar: AppBar(
         toolbarHeight: MediaQuery.of(context).size.height / 16,
         leadingWidth: MediaQuery.of(context).size.width / 2,
         backgroundColor: Theme.of(context).backgroundColor,
         elevation: 30,
-        leading: Text(
+        title: Text(
           'Ali Syed',
           style: GoogleFonts.pacifico(
               color: Colors.black,
               fontSize: MediaQuery.of(context).size.height / 16 / 2),
         ),
-        actions: [
-          ButtonBar(
-            children: [
-              SimpleButton1('Home', () {
-                setState(
-                  () {
-                    currentBuildWhat = 'home';
-                  },
-                );
-                print(currentBuildWhat);
-              }, currentBuildWhat == 'home'),
-              SimpleButton1('Travel', () {
-                setState(() {
-                  currentBuildWhat = 'travel';
-                });
-              }, currentBuildWhat == 'travel'),
-              SimpleButton1('People', () {
-                setState(() {
-                  currentBuildWhat = 'people';
-                });
-              }, currentBuildWhat == 'peopl'),
-              SimpleButton1('Work', () {
-                setState(() {
-                  currentBuildWhat = 'work';
-                });
-              }, currentBuildWhat == 'work'),
-              SimpleButton1('About', () {
-                setState(() {
-                  currentBuildWhat = 'about';
-                });
-              }, currentBuildWhat == 'about'),
-            ],
-          ),
-        ],
+        actions: !isMobile
+            ? [
+                ButtonBar(
+                  children: [
+                    SimpleButton1('Home', () {
+                      setState(
+                        () {
+                          currentBuildWhat = 'home';
+                        },
+                      );
+                      print(currentBuildWhat);
+                    }, currentBuildWhat == 'home'),
+                    SimpleButton1('Travel', () {
+                      setState(() {
+                        currentBuildWhat = 'travel';
+                      });
+                    }, currentBuildWhat == 'travel'),
+                    SimpleButton1('People', () {
+                      setState(() {
+                        currentBuildWhat = 'people';
+                      });
+                    }, currentBuildWhat == 'peopl'),
+                    SimpleButton1('Work', () {
+                      setState(() {
+                        currentBuildWhat = 'work';
+                      });
+                    }, currentBuildWhat == 'work'),
+                    SimpleButton1('About', () {
+                      setState(() {
+                        currentBuildWhat = 'about';
+                      });
+                    }, currentBuildWhat == 'about'),
+                  ],
+                ),
+              ]
+            : [],
       ),
       body: SafeArea(
         // child: buildHome(currentBuildWhat),
-        child: buildHome("work"),
+        child: buildHome(currentBuildWhat),
       ),
       extendBodyBehindAppBar: true,
     );
