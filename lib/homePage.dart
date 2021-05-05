@@ -102,7 +102,9 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SafeArea(
         // child: buildHome(currentBuildWhat),
-        child: buildHome(currentBuildWhat),
+
+        // work by default
+        child: buildHome("work"),
       ),
       extendBodyBehindAppBar: true,
     );

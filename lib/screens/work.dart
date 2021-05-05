@@ -4,11 +4,13 @@ import 'package:alisyed_com/screens/work/work3_skills22.dart';
 import 'package:alisyed_com/screens/work/work4_skills23.dart';
 import 'package:alisyed_com/screens/work/work5_skills24.dart';
 import 'package:alisyed_com/screens/work/work6_contact.dart';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 import 'package:lottie/lottie.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:mouse_parallax/mouse_parallax.dart';
 
 class Work extends StatefulWidget {
   @override

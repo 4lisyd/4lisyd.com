@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 ThemeData theme() {
   return ThemeData(
     iconTheme: IconThemeData(color: Colors.white),
+    primaryIconTheme: IconThemeData(color: Colors.black),
     backgroundColor: Color(0xffffff22),
     accentColor: Color(0xffffff22),
     primaryColorDark: Colors.black,
