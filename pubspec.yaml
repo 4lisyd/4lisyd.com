@@ -45,6 +45,7 @@ flutter:
     - lib/assets/animations/18123-developer.json
     - lib/assets/pngs/
     - lib/assets/pngs/socialMedia_pngs/
+    - lib/assets/pngs/work1bg_stars.jpg
 
   
   
