@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:html' as html;
 
 class Work31 extends StatelessWidget {
   @override
@@ -22,38 +23,56 @@ class Work31 extends StatelessWidget {
                   .headline1
                   .copyWith(color: Colors.black, fontSize: 24),
             ),
-            // Center(
-            //   child: Container(
-            //       child:
-            //           Image.asset("lib/assets/pngs/socialMedia_pngs/github.png")),
-            // ),
-            //
             SizedBox(
               height: 40,
             ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset("lib/assets/pngs/socialMedia_pngs/github.png"),
-                SizedBox(
-                  width: 20,
-                ),
-                Text('https://github.com/4lisyd'),
-              ],
+            FlatButton(
+              onPressed: () {
+                html.window.open("https://github.com/4lisyd", "github");
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset("lib/assets/pngs/socialMedia_pngs/github.png"),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  // Text('https://github.com/4lisyd'),
+                ],
+              ),
             ),
             SizedBox(
               height: 20,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset("lib/assets/pngs/socialMedia_pngs/linkedin.png"),
-                SizedBox(
-                  width: 20,
-                ),
-                Text('https://www.linkedin.com/in/4lisyd'),
-              ],
+            FlatButton(
+              onPressed: () {
+                html.window
+                    .open("https://www.linkedin.com/in/4lisyd", "LinkedIn");
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset("lib/assets/pngs/socialMedia_pngs/linkedin.png"),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  // Text('https://www.linkedin.com/in/4lisyd'),
+                ],
+              ),
+            ),
+            FlatButton(
+              onPressed: () {
+                html.window.open("mailto:4limsyed@gmail.com", "Email");
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // Image.asset("lib/assets/pngs/socialMedia_pngs/ema.png"),
+                  Icon(Icons.email),
+
+                  // Text('https://www.linkedin.com/in/4lisyd'),
+                ],
+              ),
             ),
           ],
         ),

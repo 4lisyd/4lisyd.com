@@ -13,8 +13,9 @@ class Work24 extends StatelessWidget {
             bottomRight: Radius.circular(100),
           ),
         ),
-        height:
-            MediaQuery.of(context).size.height - AppBar().preferredSize.height,
+        height: MediaQuery.of(context).size.height -
+            AppBar().preferredSize.height +
+            MediaQuery.of(context).size.height * .1,
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: [

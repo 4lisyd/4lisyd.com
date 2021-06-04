@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:alisyed_com/components/buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:mouse_parallax/mouse_parallax.dart';
@@ -13,6 +14,9 @@ class Work1 extends StatefulWidget {
 class _Work1State extends State<Work1> {
   @override
   Key mouseRegionKey;
+  Key glowKey;
+  // double parallaxOffsetx = 20;
+  // double parallaxOffsety = 20;
   // double work1bg_stars_randomscaled = 1.0;
 
   Widget build(BuildContext context) {
@@ -33,9 +37,10 @@ class _Work1State extends State<Work1> {
           backgroundBlendMode: BlendMode.color,
           image: DecorationImage(
               image: AssetImage("lib/assets/pngs/work1bg_stars.jpg"),
+
               // colorFilter: ColorFilter.mode(),
-              colorFilter:
-                  ColorFilter.mode(Color(0xff998833), BlendMode.overlay),
+              colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.2), BlendMode.darken),
               fit: BoxFit.fill),
         ),
         child: Stack(
@@ -82,7 +87,7 @@ class _Work1State extends State<Work1> {
                     child: Container(
                       width: 10000,
                       height: 10000,
-                      color: Colors.black.withOpacity(0),
+                      color: Colors.black.withOpacity(.3),
                       child: ColorFiltered(
                         colorFilter:
                             ColorFilter.mode(Color(0xf223344), BlendMode.color),
@@ -115,22 +120,19 @@ class _Work1State extends State<Work1> {
                     .copyWith(fontSize: 30, color: Colors.white),
               ),
             ),
+
             Positioned(
               right: MediaQuery.of(context).size.width / 20,
-              bottom: MediaQuery.of(context).size.height / 1.5,
-              child: Container(
-                child: TextButton(
-                  onPressed: () {},
-                  child: Container(
-                    height: 60,
-                    width: 120,
-                    child: Center(
-                        child: Text(
-                      'Hire Me',
-                      style: Theme.of(context).textTheme.bodyText2,
-                    )),
-                    color: Theme.of(context).accentColor,
-                  ),
+              top: MediaQuery.of(context).size.height / 1.57,
+              // right: MediaQuery.of(context).size.width / 20,
+              // bottom: MediaQuery.of(context).size.height / 1.5,
+              child: AnimatedContainer(
+                duration: Duration(seconds: 2),
+                // onEnd: (value) {},
+                child: GlowingButton(
+                  color1: Theme.of(context).accentColor,
+                  color2: Colors.black12,
+                  key: glowKey,
                 ),
               ),
             ),
@@ -167,9 +169,17 @@ class _Work1State extends State<Work1> {
                             ]),
                       ),
                       AnimatedTextKit(
+                        repeatForever: true,
+                        // onNext: (int no, bool yes) {
+                        //   setState(() {
+                        //     // Random random = Random();
+                        //     // parallaxOffsetx = random.nextDouble() * 10;
+                        //     // parallaxOffsety = random.nextDouble() * 10;
+                        //   });
+                        // },
                         animatedTexts: [
                           RotateAnimatedText(
-                            'Full-Stack',
+                            'Developer',
                             textStyle: Theme.of(context)
                                 .textTheme
                                 .headline1
@@ -179,9 +189,12 @@ class _Work1State extends State<Work1> {
                                   color: Colors.black,
                                   offset: Offset(20, 20))
                             ], color: Colors.white),
+                            rotateOut: false,
+                            alignment: Alignment.center,
+                            duration: Duration(milliseconds: 1),
                           ),
                           RotateAnimatedText(
-                            'All-In',
+                            'Software Engineer',
                             textStyle: Theme.of(context)
                                 .textTheme
                                 .headline1
@@ -191,9 +204,12 @@ class _Work1State extends State<Work1> {
                                   color: Colors.black,
                                   offset: Offset(20, 20))
                             ], color: Colors.white),
+                            rotateOut: false,
+                            alignment: Alignment.center,
+                            duration: Duration(milliseconds: 1),
                           ),
                           RotateAnimatedText(
-                            'Different',
+                            'Computer Scientist',
                             textStyle: Theme.of(context)
                                 .textTheme
                                 .headline1
@@ -203,20 +219,23 @@ class _Work1State extends State<Work1> {
                                   color: Colors.black,
                                   offset: Offset(20, 20))
                             ], color: Colors.white),
+                            rotateOut: false,
+                            alignment: Alignment.center,
+                            duration: Duration(milliseconds: 1),
                           ),
                         ],
                         displayFullTextOnTap: true,
                       ),
-                      Text(
-                        ' Developer',
-                        style: Theme.of(context).textTheme.headline1.copyWith(
-                            shadows: [
-                              Shadow(
-                                  blurRadius: 20,
-                                  color: Colors.black,
-                                  offset: Offset(20, 20))
-                            ]),
-                      ),
+                      // Text(
+                      //   ' Developer',
+                      //   style: Theme.of(context).textTheme.headline1.copyWith(
+                      //       shadows: [
+                      //         Shadow(
+                      //             blurRadius: 20,
+                      //             color: Colors.black,
+                      //             offset: Offset(20, 20))
+                      //       ]),
+                      // ),
                     ],
                   ),
                   // Image.asset('lib/assets/pngs/socialMedia_pngs/github.png'),
