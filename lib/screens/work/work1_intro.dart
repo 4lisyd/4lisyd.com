@@ -31,7 +31,7 @@ class _Work1State extends State<Work1> {
       child: Container(
         height: MediaQuery.of(context).size.height -
             MediaQuery.of(context).size.height / 16,
-        width: MediaQuery.of(context).size.width,
+        // width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           color: Colors.yellow.withOpacity(.4),
           backgroundBlendMode: BlendMode.color,
@@ -106,7 +106,10 @@ class _Work1State extends State<Work1> {
               bottom: MediaQuery.of(context).size.height / 1.5,
               child: Text(
                 "Hi, I'm Ali",
-                style: Theme.of(context).textTheme.headline1,
+                style: Theme.of(context)
+                    .textTheme
+                    .headline1
+                    .copyWith(fontSize: MediaQuery.of(context).size.width / 13),
               ),
             ),
             Positioned(
@@ -114,10 +117,9 @@ class _Work1State extends State<Work1> {
               bottom: MediaQuery.of(context).size.height / 1.6,
               child: Text(
                 "Nice to meet you.",
-                style: Theme.of(context)
-                    .textTheme
-                    .headline1
-                    .copyWith(fontSize: 30, color: Colors.white),
+                style: Theme.of(context).textTheme.headline1.copyWith(
+                    fontSize: MediaQuery.of(context).size.width / 25,
+                    color: Colors.white),
               ),
             ),
 
@@ -166,65 +168,68 @@ class _Work1State extends State<Work1> {
                                   blurRadius: 20,
                                   color: Colors.black,
                                   offset: Offset(20, 20))
-                            ]),
+                            ],
+                            fontSize: MediaQuery.of(context).size.width / 20),
                       ),
-                      AnimatedTextKit(
-                        repeatForever: true,
-                        // onNext: (int no, bool yes) {
-                        //   setState(() {
-                        //     // Random random = Random();
-                        //     // parallaxOffsetx = random.nextDouble() * 10;
-                        //     // parallaxOffsety = random.nextDouble() * 10;
-                        //   });
-                        // },
-                        animatedTexts: [
-                          RotateAnimatedText(
-                            'Developer',
-                            textStyle: Theme.of(context)
-                                .textTheme
-                                .headline1
-                                .copyWith(shadows: [
-                              Shadow(
-                                  blurRadius: 20,
-                                  color: Colors.black,
-                                  offset: Offset(20, 20))
-                            ], color: Colors.white),
-                            rotateOut: false,
-                            alignment: Alignment.center,
-                            duration: Duration(milliseconds: 1),
-                          ),
-                          RotateAnimatedText(
-                            'Software Engineer',
-                            textStyle: Theme.of(context)
-                                .textTheme
-                                .headline1
-                                .copyWith(shadows: [
-                              Shadow(
-                                  blurRadius: 20,
-                                  color: Colors.black,
-                                  offset: Offset(20, 20))
-                            ], color: Colors.white),
-                            rotateOut: false,
-                            alignment: Alignment.center,
-                            duration: Duration(milliseconds: 1),
-                          ),
-                          RotateAnimatedText(
-                            'Computer Scientist',
-                            textStyle: Theme.of(context)
-                                .textTheme
-                                .headline1
-                                .copyWith(shadows: [
-                              Shadow(
-                                  blurRadius: 20,
-                                  color: Colors.black,
-                                  offset: Offset(20, 20))
-                            ], color: Colors.white),
-                            rotateOut: false,
-                            alignment: Alignment.center,
-                            duration: Duration(milliseconds: 1),
-                          ),
-                        ],
-                        displayFullTextOnTap: true,
+                      Expanded(
+                        child: AnimatedTextKit(
+                          repeatForever: true,
+                          // onNext: (int no, bool yes) {
+                          //   setState(() {
+                          //     // Random random = Random();
+                          //     // parallaxOffsetx = random.nextDouble() * 10;
+                          //     // parallaxOffsety = random.nextDouble() * 10;
+                          //   });
+                          // },
+                          animatedTexts: [
+                            RotateAnimatedText(
+                              'Developer',
+                              textStyle: Theme.of(context)
+                                  .textTheme
+                                  .headline1
+                                  .copyWith(shadows: [
+                                Shadow(
+                                    blurRadius: 20,
+                                    color: Colors.black,
+                                    offset: Offset(20, 20))
+                              ], color: Colors.white),
+                              rotateOut: false,
+                              alignment: Alignment.center,
+                              duration: Duration(milliseconds: 1),
+                            ),
+                            RotateAnimatedText(
+                              'Software Engineer',
+                              textStyle: Theme.of(context)
+                                  .textTheme
+                                  .headline1
+                                  .copyWith(shadows: [
+                                Shadow(
+                                    blurRadius: 20,
+                                    color: Colors.black,
+                                    offset: Offset(20, 20))
+                              ], color: Colors.white),
+                              rotateOut: false,
+                              alignment: Alignment.center,
+                              duration: Duration(milliseconds: 1),
+                            ),
+                            RotateAnimatedText(
+                              'Computer Scientist',
+                              textStyle: Theme.of(context)
+                                  .textTheme
+                                  .headline1
+                                  .copyWith(shadows: [
+                                Shadow(
+                                    blurRadius: 20,
+                                    color: Colors.black,
+                                    offset: Offset(20, 20))
+                              ], color: Colors.white),
+                              rotateOut: false,
+                              alignment: Alignment.center,
+                              duration: Duration(milliseconds: 1),
+                            ),
+                          ],
+                          displayFullTextOnTap: true,
+                        ),
                       ),
                       // Text(
                       //   ' Developer',

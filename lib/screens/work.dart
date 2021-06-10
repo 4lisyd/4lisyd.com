@@ -45,27 +45,21 @@ class _WorkState extends State<Work> {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        if (constraints.maxWidth > 0) {
-          return MouseRegion(
-            onHover: (pointerHoverEvent) {},
-            child: SingleChildScrollView(
-              controller: homeScrollController,
-              child: Column(
-                children: [
-                  Work1(),
-                  Work21(),
-                  Work22(),
-                  Work23(),
-                  Work24(),
-                  Work31(),
-                ],
-              ),
-            ),
-          );
-        }
-      },
+    return MouseRegion(
+      onHover: (pointerHoverEvent) {},
+      child: SingleChildScrollView(
+        controller: homeScrollController,
+        child: Column(
+          children: [
+            Work1(),
+            Work21(),
+            Work22(),
+            Work23(),
+            Work24(),
+            Work31(),
+          ],
+        ),
+      ),
     );
   }
 }

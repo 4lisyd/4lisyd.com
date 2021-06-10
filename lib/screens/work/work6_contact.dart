@@ -26,53 +26,66 @@ class Work31 extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            FlatButton(
-              onPressed: () {
-                html.window.open("https://github.com/4lisyd", "github");
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset("lib/assets/pngs/socialMedia_pngs/github.png"),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  // Text('https://github.com/4lisyd'),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            FlatButton(
-              onPressed: () {
-                html.window
-                    .open("https://www.linkedin.com/in/4lisyd", "LinkedIn");
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset("lib/assets/pngs/socialMedia_pngs/linkedin.png"),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  // Text('https://www.linkedin.com/in/4lisyd'),
-                ],
-              ),
-            ),
-            FlatButton(
-              onPressed: () {
-                html.window.open("mailto:4limsyed@gmail.com", "Email");
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // Image.asset("lib/assets/pngs/socialMedia_pngs/ema.png"),
-                  Icon(Icons.email),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FlatButton(
+                  onPressed: () {
+                    html.window.open("https://github.com/4lisyd", "github");
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        "lib/assets/pngs/socialMedia_pngs/githubIcon.png",
+                        scale: 1.3,
+                      ),
 
-                  // Text('https://www.linkedin.com/in/4lisyd'),
-                ],
-              ),
+                      // Text('https://github.com/4lisyd'),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                FlatButton(
+                  onPressed: () {
+                    html.window.open("mailto:4limsyed@gmail.com", "Email");
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // Image.asset("lib/assets/pngs/socialMedia_pngs/ema.png"),
+                      Image.asset(
+                        "lib/assets/pngs/socialMedia_pngs/emailIcon.png",
+                        scale: 1.3,
+                      ),
+
+                      // Text('https://www.linkedin.com/in/4lisyd'),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                FlatButton(
+                  onPressed: () {
+                    html.window.open(
+                        "https://www.linkedin.com/in/4lisyd/", "linkedIn");
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        "lib/assets/pngs/socialMedia_pngs/linkedinIcon.png",
+                        scale: 1.3,
+                      ),
+
+                      // Text('https://github.com/4lisyd'),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -80,3 +93,9 @@ class Work31 extends StatelessWidget {
     );
   }
 }
+
+
+
+// icons needed twitter, github, email, linkedIn, instagram, youtube, behance, phone, facebook, whatsapp, telegram,
+
+// get more from https://iconmonstr.com/ & 48pixels

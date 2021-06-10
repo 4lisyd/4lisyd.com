@@ -5,8 +5,9 @@ class Work23 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Color(0xfffcfff3),
-      height:
-          MediaQuery.of(context).size.height - AppBar().preferredSize.height,
+      // height:
+      //     MediaQuery.of(context).size.height - AppBar().preferredSize.height,
+      height: MediaQuery.of(context).size.height / 1.5,
       width: MediaQuery.of(context).size.width,
       child: Column(
         children: [
