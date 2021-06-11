@@ -31,7 +31,7 @@ class _Work1State extends State<Work1> {
       child: Container(
         height: MediaQuery.of(context).size.height -
             MediaQuery.of(context).size.height / 16,
-        // width: MediaQuery.of(context).size.width,
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           color: Colors.yellow.withOpacity(.4),
           backgroundBlendMode: BlendMode.color,
@@ -106,10 +106,11 @@ class _Work1State extends State<Work1> {
               bottom: MediaQuery.of(context).size.height / 1.5,
               child: Text(
                 "Hi, I'm Ali",
-                style: Theme.of(context)
-                    .textTheme
-                    .headline1
-                    .copyWith(fontSize: MediaQuery.of(context).size.width / 13),
+                style: Theme.of(context).textTheme.headline1.copyWith(
+                      fontSize: MediaQuery.of(context).size.width <= 600
+                          ? MediaQuery.of(context).size.width / 13
+                          : 50,
+                    ),
               ),
             ),
             Positioned(
@@ -118,8 +119,11 @@ class _Work1State extends State<Work1> {
               child: Text(
                 "Nice to meet you.",
                 style: Theme.of(context).textTheme.headline1.copyWith(
-                    fontSize: MediaQuery.of(context).size.width / 25,
-                    color: Colors.white),
+                      fontSize: MediaQuery.of(context).size.width <= 600
+                          ? MediaQuery.of(context).size.width / 20
+                          : 30,
+                      color: Colors.white,
+                    ),
               ),
             ),
 
@@ -163,13 +167,16 @@ class _Work1State extends State<Work1> {
                       Text(
                         'The Odyssey of a ',
                         style: Theme.of(context).textTheme.headline1.copyWith(
-                            shadows: [
-                              Shadow(
-                                  blurRadius: 20,
-                                  color: Colors.black,
-                                  offset: Offset(20, 20))
-                            ],
-                            fontSize: MediaQuery.of(context).size.width / 20),
+                          shadows: [
+                            Shadow(
+                                blurRadius: 20,
+                                color: Colors.black,
+                                offset: Offset(20, 20))
+                          ],
+                          fontSize: MediaQuery.of(context).size.width <= 600
+                              ? MediaQuery.of(context).size.width / 20
+                              : 30,
+                        ),
                       ),
                       Expanded(
                         child: AnimatedTextKit(
@@ -202,12 +209,15 @@ class _Work1State extends State<Work1> {
                               textStyle: Theme.of(context)
                                   .textTheme
                                   .headline1
-                                  .copyWith(shadows: [
-                                Shadow(
-                                    blurRadius: 20,
-                                    color: Colors.black,
-                                    offset: Offset(20, 20))
-                              ], color: Colors.white),
+                                  .copyWith(
+                                shadows: [
+                                  Shadow(
+                                      blurRadius: 20,
+                                      color: Colors.black,
+                                      offset: Offset(20, 20))
+                                ],
+                                color: Colors.white,
+                              ),
                               rotateOut: false,
                               alignment: Alignment.center,
                               duration: Duration(milliseconds: 1),
