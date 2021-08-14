@@ -22,10 +22,9 @@ class _Work1State extends State<Work1> {
 
   Widget build(BuildContext context) {
 
-    // if (MediaQuery.of(context).size.width < 800)
-    // {
-    //   print('its mobile now');
-    // }
+     isMobile = (MediaQuery.of(context).size.width < 800);
+    
+  
 
 
     return MouseRegion(
@@ -85,28 +84,28 @@ class _Work1State extends State<Work1> {
             ParallaxStack(
               // dragCurve: Curves.deceerate,
               layers: [
-                ParallaxLayer(
-                  zRotation: 0.03,
-                  yRotation: 0.05,
-                  xRotation: 0.06,
-                  xOffset: 20,
-                  yOffset: 20,
-                  child: Center(
-                    child: Container(
-                      width: 10000,
-                      height: 10000,
-                      color: Colors.black.withOpacity(.3),
-                      child: ColorFiltered(
-                        colorFilter:
-                            ColorFilter.mode(Color(0xf223344), BlendMode.color),
-                        child: Image.asset(
-                          'assets/images/myPortraits/portraitDistortion.png',
-                          fit: BoxFit.fitHeight,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+                // ParallaxLayer(
+                //   zRotation: 0.03,
+                //   yRotation: 0.05,
+                //   xRotation: 0.06,
+                //   xOffset: 20,
+                //   yOffset: 20,
+                //   child: Center(
+                //     child: Container(
+                //       width: 10000,
+                //       height: 10000,
+                //       color: Colors.black.withOpacity(.3),
+                //       child: ColorFiltered(
+                //         colorFilter:
+                //             ColorFilter.mode(Color(0xf223344), BlendMode.color),
+                //         child: Image.asset(
+                //           'assets/images/myPortraits/portraitDistortion.png',
+                //           fit: BoxFit.fitHeight,
+                //         ),
+                //       ),
+                //     ),
+                //   ),
+                // ),
               ],
             ),
             Positioned(

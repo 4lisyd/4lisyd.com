@@ -21,10 +21,13 @@ class Work extends StatefulWidget {
 
 class _WorkState extends State<Work> {
   ScrollController homeScrollController = ScrollController();
+  bool isMobile;
 
   @override
   void initState() {
     super.initState();
+        
+
     
     // homeScrollController.addListener(() {
     //   setState(() {
@@ -48,8 +51,14 @@ class _WorkState extends State<Work> {
 
   @override
   Widget build(BuildContext context) {
+
+        isMobile = MediaQuery.of(context).size.width < 600;
+
+
     return MouseRegion(
-      onHover: (pointerHoverEvent) {},
+      onHover: (pointerHoverEvent) {
+        print(pointerHoverEvent.delta);
+      },
       child: SingleChildScrollView(
         controller: homeScrollController,
         child: Column(
