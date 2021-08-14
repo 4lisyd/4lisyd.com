@@ -1,8 +1,8 @@
-import 'dart:math';
+// import 'dart:math';
 
 import 'package:alisyed_com/components/buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:auto_size_text/auto_size_text.dart';
+// import 'package:auto_size_text/auto_size_text.dart';
 import 'package:mouse_parallax/mouse_parallax.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
@@ -13,13 +13,21 @@ class Work1 extends StatefulWidget {
 
 class _Work1State extends State<Work1> {
   @override
-  Key mouseRegionKey;
-  Key glowKey;
+   Key mouseRegionKey;
+   Key glowKey;
+   bool isMobile;
   // double parallaxOffsetx = 20;
   // double parallaxOffsety = 20;
   // double work1bg_stars_randomscaled = 1.0;
 
   Widget build(BuildContext context) {
+
+    // if (MediaQuery.of(context).size.width < 800)
+    // {
+    //   print('its mobile now');
+    // }
+
+
     return MouseRegion(
       onHover: (value) {
         // print(work1bg_stars_randomscaled);
@@ -106,7 +114,7 @@ class _Work1State extends State<Work1> {
               bottom: MediaQuery.of(context).size.height / 1.5,
               child: Text(
                 "Hi, I'm Ali",
-                style: Theme.of(context).textTheme.headline1.copyWith(
+                style: Theme.of(context).textTheme.headline1?.copyWith(
                       fontSize: MediaQuery.of(context).size.width <= 600
                           ? MediaQuery.of(context).size.width / 13
                           : 50,
@@ -118,7 +126,7 @@ class _Work1State extends State<Work1> {
               bottom: MediaQuery.of(context).size.height / 1.6,
               child: Text(
                 "Nice to meet you.",
-                style: Theme.of(context).textTheme.headline1.copyWith(
+                style: Theme.of(context).textTheme.headline1?.copyWith(
                       fontSize: MediaQuery.of(context).size.width <= 600
                           ? MediaQuery.of(context).size.width / 20
                           : 30,
@@ -138,7 +146,10 @@ class _Work1State extends State<Work1> {
                 child: GlowingButton(
                   color1: Theme.of(context).accentColor,
                   color2: Colors.black12,
-                  key: glowKey,
+                  onPressFunc: (){
+                    print('happening.,');
+                  },
+                  // key: glowKey,
                 ),
               ),
             ),
@@ -162,11 +173,15 @@ class _Work1State extends State<Work1> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
+
                     // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 20,
+                      ),
                       Text(
                         'The Odyssey of a ',
-                        style: Theme.of(context).textTheme.headline1.copyWith(
+                        style: Theme.of(context).textTheme.headline1?.copyWith(
                           shadows: [
                             Shadow(
                                 blurRadius: 20,
@@ -194,12 +209,19 @@ class _Work1State extends State<Work1> {
                               textStyle: Theme.of(context)
                                   .textTheme
                                   .headline1
-                                  .copyWith(shadows: [
-                                Shadow(
-                                    blurRadius: 20,
-                                    color: Colors.black,
-                                    offset: Offset(20, 20))
-                              ], color: Colors.white),
+                                  ?.copyWith(
+                                shadows: [
+                                  Shadow(
+                                      blurRadius: 20,
+                                      color: Colors.black,
+                                      offset: Offset(20, 20))
+                                ],
+                                color: Colors.white,
+                                fontSize:
+                                    MediaQuery.of(context).size.width <= 600
+                                        ? MediaQuery.of(context).size.width / 15
+                                        : 40,
+                              ),
                               rotateOut: false,
                               alignment: Alignment.center,
                               duration: Duration(milliseconds: 1),
@@ -209,7 +231,7 @@ class _Work1State extends State<Work1> {
                               textStyle: Theme.of(context)
                                   .textTheme
                                   .headline1
-                                  .copyWith(
+                                  ?.copyWith(
                                 shadows: [
                                   Shadow(
                                       blurRadius: 20,
@@ -217,6 +239,10 @@ class _Work1State extends State<Work1> {
                                       offset: Offset(20, 20))
                                 ],
                                 color: Colors.white,
+                                fontSize:
+                                    MediaQuery.of(context).size.width <= 600
+                                        ? MediaQuery.of(context).size.width / 15
+                                        : 40,
                               ),
                               rotateOut: false,
                               alignment: Alignment.center,
@@ -227,12 +253,19 @@ class _Work1State extends State<Work1> {
                               textStyle: Theme.of(context)
                                   .textTheme
                                   .headline1
-                                  .copyWith(shadows: [
-                                Shadow(
-                                    blurRadius: 20,
-                                    color: Colors.black,
-                                    offset: Offset(20, 20))
-                              ], color: Colors.white),
+                                 ?.copyWith(
+                                shadows: [
+                                  Shadow(
+                                      blurRadius: 20,
+                                      color: Colors.black,
+                                      offset: Offset(20, 20))
+                                ],
+                                color: Colors.white,
+                                fontSize:
+                                    MediaQuery.of(context).size.width <= 600
+                                        ? MediaQuery.of(context).size.width / 15
+                                        : 40,
+                              ),
                               rotateOut: false,
                               alignment: Alignment.center,
                               duration: Duration(milliseconds: 1),

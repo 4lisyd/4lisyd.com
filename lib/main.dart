@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:url_strategy/url_strategy.dart';
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:html';
 
 const String HomeRoute = '/home';
@@ -11,9 +12,17 @@ const String AboutRoute = '/about';
 const String EpisodesRoute = '/episodes';
 const String EpisodeDetailsRoute = '/episode';
 
+
+
+// TODO: loader splash screen using index.html
+
+
+
+
+
 void main() {
-  // setPathUrlStrategy();
-  setHashUrlStrategy();
+  setPathUrlStrategy();
+  // setHashUrlStrategy();
   runApp(MyApp());
   var url = window.location.href;
   print(url);
@@ -23,8 +32,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+              // print('its web now');
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      // home: HomePage(),
       home: HomePage(),
       // initialRoute: 'travel',
       theme: theme(),
@@ -50,3 +63,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+

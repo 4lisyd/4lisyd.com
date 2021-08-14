@@ -86,42 +86,42 @@ class _Work21State extends State<Work21> {
                 children: [
                   AutoSizeText(
                     'S',
-                    style: Theme.of(context).textTheme.headline1.copyWith(
+                    style: Theme.of(context).textTheme.headline1?.copyWith(
                           fontSize: 40,
                           color: Theme.of(context).buttonColor,
                         ),
                   ),
                   AutoSizeText(
                     'K',
-                    style: Theme.of(context).textTheme.headline1.copyWith(
+                    style: Theme.of(context).textTheme.headline1?.copyWith(
                           fontSize: 40,
                           color: Theme.of(context).primaryColorDark,
                         ),
                   ),
                   AutoSizeText(
                     'i',
-                    style: Theme.of(context).textTheme.headline1.copyWith(
+                    style: Theme.of(context).textTheme.headline1?.copyWith(
                           fontSize: 40,
                           color: Theme.of(context).primaryColorDark,
                         ),
                   ),
                   AutoSizeText(
                     'L',
-                    style: Theme.of(context).textTheme.headline1.copyWith(
+                    style: Theme.of(context).textTheme.headline1?.copyWith(
                           fontSize: 40,
                           color: Theme.of(context).primaryColorDark,
                         ),
                   ),
                   AutoSizeText(
                     'L',
-                    style: Theme.of(context).textTheme.headline1.copyWith(
+                    style: Theme.of(context).textTheme.headline1?.copyWith(
                           fontSize: 40,
                           color: Theme.of(context).primaryColorDark,
                         ),
                   ),
                   AutoSizeText(
                     'S',
-                    style: Theme.of(context).textTheme.headline1.copyWith(
+                    style: Theme.of(context).textTheme.headline1?.copyWith(
                           fontSize: 40,
                           color: Theme.of(context).buttonColor,
                         ),
@@ -156,8 +156,11 @@ class _Work21State extends State<Work21> {
                           'Software Dev.',
                           textAlign: TextAlign.center,
                           maxLines: 1,
-                          style: Theme.of(context).textTheme.headline3.copyWith(
-                              // fontSize: mobile ? 22,
+                          style: Theme.of(context).textTheme.headline3?.copyWith(
+                                fontSize:
+                                    MediaQuery.of(context).size.width <= 600
+                                        ? MediaQuery.of(context).size.width / 30
+                                        : 20,
                               ),
                         ),
                         // Container(
@@ -170,8 +173,11 @@ class _Work21State extends State<Work21> {
                         // ),
                         AutoSizeText(
                           'Cross-platform application development for numerous platform with cunning simplicity and consistent thoughout.',
-                          style: Theme.of(context).textTheme.bodyText1.copyWith(
-                                fontSize: 11,
+                          style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                                fontSize:
+                                    MediaQuery.of(context).size.width <= 600
+                                        ? MediaQuery.of(context).size.width / 40
+                                        : 13,
                               ),
                           textAlign: TextAlign.center,
 
@@ -206,8 +212,11 @@ class _Work21State extends State<Work21> {
                           'UX/UI Design.',
                           textAlign: TextAlign.center,
                           maxLines: 1,
-                          style: Theme.of(context).textTheme.headline3.copyWith(
-                                fontSize: 22,
+                          style: Theme.of(context).textTheme.headline3?.copyWith(
+                                fontSize:
+                                    MediaQuery.of(context).size.width <= 600
+                                        ? MediaQuery.of(context).size.width / 30
+                                        : 20,
                               ),
                         ),
                         // Container(
@@ -220,8 +229,11 @@ class _Work21State extends State<Work21> {
                         // ),
                         AutoSizeText(
                           'I value simple content structure, clean design patterns, and thoughtful interactions.',
-                          style: Theme.of(context).textTheme.bodyText1.copyWith(
-                                fontSize: 11,
+                          style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                                fontSize:
+                                    MediaQuery.of(context).size.width <= 600
+                                        ? MediaQuery.of(context).size.width / 40
+                                        : 13,
                               ),
                           maxLines: 4,
                         ),
@@ -254,9 +266,11 @@ class _Work21State extends State<Work21> {
                           'Web Dev.',
                           textAlign: TextAlign.center,
                           maxLines: 1,
-                          style: Theme.of(context).textTheme.headline3.copyWith(
+                          style: Theme.of(context).textTheme.headline3?.copyWith(
                                 fontSize:
-                                    MediaQuery.of(context).size.width / 30,
+                                    MediaQuery.of(context).size.width <= 600
+                                        ? MediaQuery.of(context).size.width / 30
+                                        : 20,
                               ),
                         ),
                         // Container(
@@ -269,13 +283,15 @@ class _Work21State extends State<Work21> {
                         // ),
                         Text(
                           'I like to code things from scratch, and enjoy bringing ideas to life in the browser.',
-                          style: Theme.of(context).textTheme.bodyText1.copyWith(
-                              fontSize: isMobile
-                                  ? MediaQuery.of(context).size.width / 20
-                                  : 13),
+                          style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                                fontSize:
+                                    MediaQuery.of(context).size.width <= 600
+                                        ? MediaQuery.of(context).size.width / 40
+                                        : 13,
+                              ),
                         ),
                         addSoftwareDevSkill(context, 'Html/Css/Javascript'),
-                        addSoftwareDevSkill(context, 'Fluid Flutter Web Apps'),
+                        addSoftwareDevSkill(context, 'Flutter web apps'),
                         addSoftwareDevSkill(
                           context,
                           'WordPress, etc',
@@ -311,7 +327,7 @@ Widget addSoftwareDevSkill(BuildContext context, String skillName) {
         skillName,
         maxLines: 1,
         minFontSize: 12,
-        style: Theme.of(context).textTheme.bodyText1.copyWith(
+        style: Theme.of(context).textTheme.bodyText1?.copyWith(
               fontSize: 12,
             ),
       ),

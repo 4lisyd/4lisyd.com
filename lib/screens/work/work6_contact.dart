@@ -21,7 +21,7 @@ class Work31 extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .headline1
-                  .copyWith(color: Colors.black, fontSize: 24),
+                  ?.copyWith(color: Colors.black, fontSize: 24),
             ),
             SizedBox(
               height: 40,

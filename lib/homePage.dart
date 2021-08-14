@@ -11,16 +11,16 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String currentBuildWhat = 'home';
-  bool isMobile;
+  bool isMobile = false;
 
   @override
   Widget build(BuildContext context) {
     isMobile = MediaQuery.of(context).size.width < 600;
 
-    if (isMobile) {
-      print('its mobile');
-    } else
-      print('its desktop');
+    // if (isMobile) {
+    //   print('its mobile');
+    // } else
+    //   print('its desktop');
     return Scaffold(
       drawerScrimColor: Colors.black.withOpacity(.3),
       drawer: Drawer(

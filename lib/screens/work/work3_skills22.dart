@@ -12,7 +12,9 @@ class _Work22State extends State<Work22> {
       color: Color(0xfffcfff3),
       // height:
       //     MediaQuery.of(context).size.height - AppBar().preferredSize.height,
-      height: MediaQuery.of(context).size.height / 2,
+      height: MediaQuery.of(context).size.width <= 600
+          ? MediaQuery.of(context).size.height / 3
+          : MediaQuery.of(context).size.height / 2,
       width: MediaQuery.of(context).size.width,
       child: Column(
         children: [

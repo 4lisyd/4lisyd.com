@@ -16,7 +16,9 @@ class Work24 extends StatelessWidget {
         // height: MediaQuery.of(context).size.height -
         //     AppBar().preferredSize.height +
         //     MediaQuery.of(context).size.height * .1,
-        height: MediaQuery.of(context).size.height / 1.5,
+        height: MediaQuery.of(context).size.width <= 600
+            ? MediaQuery.of(context).size.height / 3
+            : MediaQuery.of(context).size.height / 2,
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: [
