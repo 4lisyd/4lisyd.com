@@ -1,5 +1,8 @@
 import 'package:alisyed_com/components/buttons.dart';
+import 'package:alisyed_com/screens/about.dart';
 import 'package:alisyed_com/screens/home.dart';
+import 'package:alisyed_com/screens/people.dart';
+import 'package:alisyed_com/screens/travel.dart';
 import 'package:alisyed_com/screens/work.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,10 +20,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     isMobile = MediaQuery.of(context).size.width < 600;
 
-    if (isMobile) {
-      print('its mobile');
-    } else
-      print('its desktop');
+    // if (isMobile) {
+    //   print('its mobile');
+    // } else
+    //   print('its desktop');
     return Scaffold(
       drawerScrimColor: Colors.black.withOpacity(.3),
       drawer: Drawer(
@@ -109,7 +112,8 @@ class _HomePageState extends State<HomePage> {
         // child: buildHome(currentBuildWhat),
 
         // work by default
-        child: buildHome("work"),
+        // child: buildHome("travel"),
+        child: buildHome(currentBuildWhat),
       ),
       extendBodyBehindAppBar: true,
     );
@@ -117,16 +121,18 @@ class _HomePageState extends State<HomePage> {
 }
 
 Widget buildHome(String buildWhat) {
-  if (buildWhat == 'home') return Home();
+  if (buildWhat == 'home') 
+    return Home();
   if (buildWhat == 'work')
     return Work();
-  else if (buildWhat == 'travel') {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          Text('travel'),
-        ],
-      ),
-    );
-  }
+  if (buildWhat == 'travel')
+    return Travel();
+  if (buildWhat == 'about')
+    return About();
+  if (buildWhat == 'people')
+    return People();
+  
+  
+  
+  return Text('sd');
 }

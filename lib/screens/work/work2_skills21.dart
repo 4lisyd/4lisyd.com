@@ -37,6 +37,7 @@ class _Work21State extends State<Work21> {
                     (MediaQuery.of(context).size.width)
                         .toDouble()), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
                 painter: RPSCustomPainter(),
+                
               ),
             ),
             Positioned(
@@ -44,42 +45,9 @@ class _Work21State extends State<Work21> {
               right: MediaQuery.of(context).size.width / 8,
               bottom: MediaQuery.of(context).size.height / 4,
               // width: MediaQuery.of(context).size.width / 3,
-              child: CircleAvatar(
-                backgroundColor: Theme.of(context).accentColor.withOpacity(0.2),
-                radius: MediaQuery.of(context).size.width / 5,
-                child: AnimatedOpacity(
-                  opacity: 1.0,
-                  duration: Duration(seconds: 3),
-                  curve: Curves.easeInOut,
-                  child: LottieBuilder.asset(
-                    'lib/assets/animations/18123-developer.json',
-                    // height: MediaQuery.of(context).size.height / 1.5,
-                    reverse: true,
-
-                    // animate it from here
-
-                    animate: false,
-                    // width: MediaQuery.of(context).size.width / 15,
-                  ),
-                ),
-              ),
+              child: FloatingProgrammerAnimation(), 
             ),
-            // Positioned(
-            //   top: 20,
-            //   right: MediaQuery.of(context).size.width / 5,
-            //   child: AnimatedOpacity(
-            //     opacity: 1.0,
-            //     duration: Duration(seconds: 3),
-            //     curve: Curves.easeInOut,
-            //     child: LottieBuilder.asset(
-            //       'lib/assets/animations/18123-developer.json',
-            //       // height: MediaQuery.of(context).size.height / 1.5,
-            //       reverse: true,
-            //       animate: false,
-            //       // width: MediaQuery.of(context).size.width / 15,
-            //     ),
-            //   ),
-            // ),
+            
             Positioned(
               left: 20,
               child: Column(
@@ -134,8 +102,10 @@ class _Work21State extends State<Work21> {
               left: 0,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
+                    
                     padding: EdgeInsets.all(10),
                     margin: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width * 0.2923077 / 2,
@@ -193,10 +163,10 @@ class _Work21State extends State<Work21> {
                   Container(
                     padding: EdgeInsets.all(20),
                     margin: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width * 0.2923077 / 2,
-                        right: 20,
-                        bottom: 20,
-                        top: 20),
+                    left: MediaQuery.of(context).size.width * 0.2923077 / 2,      
+                    right: 20,
+                    bottom: 20,
+                    top: 20),
                     height: MediaQuery.of(context).size.height / 4,
                     width: MediaQuery.of(context).size.width / 3.5,
                     decoration: BoxDecoration(
@@ -253,7 +223,7 @@ class _Work21State extends State<Work21> {
                         bottom: 20,
                         top: 20),
                     height: MediaQuery.of(context).size.height / 4,
-                    width: MediaQuery.of(context).size.width / 3,
+                    width: MediaQuery.of(context).size.width / 3.5,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         color:
@@ -367,5 +337,96 @@ class RPSCustomPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
     return true;
+  }
+}
+
+
+class FloatingProgrammerAnimation extends StatefulWidget {
+  const FloatingProgrammerAnimation({ Key key }) : super(key: key);
+
+  @override
+  _FloatingProgrammerAnimationState createState() => _FloatingProgrammerAnimationState();
+}
+
+class _FloatingProgrammerAnimationState extends State<FloatingProgrammerAnimation>
+    with SingleTickerProviderStateMixin {
+   AnimationController _controller;
+   Animation<Offset> _animation;
+   
+  //  Animation<Offset> _animation = Tween(begin: Offset.zero, end: Offset(10, 10)).animate();
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(vsync: this,duration: Duration(seconds: 3))..repeat(reverse: true);
+    _animation = Tween(begin: Offset.zero, end: Offset(0,.04)).animate(_controller);
+    
+
+  
+
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+    
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SlideTransition(position: _animation,
+      child: CircleAvatar(
+                  backgroundColor: Theme.of(context).accentColor.withOpacity(0.2),
+                  radius: MediaQuery.of(context).size.width / 5,
+                  child: AnimatedOpacity(
+                    opacity: 1.0,
+                    duration: Duration(seconds: 3),
+                    curve: Curves.easeInOut,
+                    child: LottieBuilder.asset(
+                      'lib/assets/animations/18123-developer.json',
+                      // height: MediaQuery.of(context).size.height / 1.5,
+                      reverse: true,
+    
+                      // animate it from here
+    
+                      animate: true,
+                      // width: MediaQuery.of(context).size.width / 15,
+                    ),
+                  ),
+                ),
+    );
+  }
+}
+
+class CurvesAnimation extends StatefulWidget {
+  const CurvesAnimation({ Key key }) : super(key: key);
+
+  @override
+  _CurvesAnimationState createState() => _CurvesAnimationState();
+}
+
+class _CurvesAnimationState extends State<CurvesAnimation>
+    with SingleTickerProviderStateMixin {
+   AnimationController _controller;
+  Animation _animate;
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(vsync: this, duration: Duration(seconds: 3))..repeat(reverse: true);
+    _animate = ColorTween(begin: Colors.blueGrey, end: Colors.lightBlue).animate(_controller);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
+    );
   }
 }

@@ -20,12 +20,12 @@ class Work extends StatefulWidget {
 }
 
 class _WorkState extends State<Work> {
-  ScrollController homeScrollController = ScrollController();
+  // ScrollController homeScrollController = ScrollController();
   bool isMobile;
 
   @override
-  void initState() {
-    super.initState();
+  // void initState() {
+    // super.initState();
         
 
     
@@ -39,7 +39,7 @@ class _WorkState extends State<Work> {
     //     // }
     //   });
     // });
-  }
+  // }
 
   void dispose() {
     super.dispose();
@@ -55,12 +55,8 @@ class _WorkState extends State<Work> {
         isMobile = MediaQuery.of(context).size.width < 600;
 
 
-    return MouseRegion(
-      onHover: (pointerHoverEvent) {
-        print(pointerHoverEvent.delta);
-      },
-      child: SingleChildScrollView(
-        controller: homeScrollController,
+    return SingleChildScrollView(
+        // controller: homeScrollController,
         child: Column(
           children: [
             Work1(), //my picture and HI
@@ -74,7 +70,7 @@ class _WorkState extends State<Work> {
             WorkWebDev(),
           ],
         ),
-      ),
+      
     );
   }
 }

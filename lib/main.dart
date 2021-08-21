@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
       // initialRoute: 'travel',
       theme: theme(),
       builder: (context, widget) => ResponsiveWrapper.builder(
-        BouncingScrollWrapper.builder(context, widget),
+        BouncingScrollWrapper.builder(context,  widget),
         maxWidth: 4000,
         minWidth: 450,
         defaultScale: true,
