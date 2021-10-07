@@ -1,6 +1,6 @@
 // import 'dart:math';
 
-import 'package:alisyed_com/components/buttons.dart';
+// import 'package:alisyed_com/components/buttons.dart';
 import 'package:flutter/material.dart';
 // import 'package:auto_size_text/auto_size_text.dart';
 import 'package:mouse_parallax/mouse_parallax.dart';
@@ -13,21 +13,15 @@ class Work1 extends StatefulWidget {
 
 class _Work1State extends State<Work1> {
   @override
-    Key mouseRegionKey;
-    Key glowKey;
-    bool isMobile;
+  Key mouseRegionKey;
+  Key glowKey;
+  bool isMobile;
   // double parallaxOffsetx = 20;
   // double parallaxOffsety = 20;
   // double work1bg_stars_randomscaled = 1.0;
 
-  
-
   Widget build(BuildContext context) {
-
-     isMobile = (MediaQuery.of(context).size.width < 600);
-    
-  
-
+    isMobile = (MediaQuery.of(context).size.width < 600);
 
     return Container(
       height: MediaQuery.of(context).size.height -
@@ -37,14 +31,13 @@ class _Work1State extends State<Work1> {
         color: Colors.yellow.withOpacity(.4),
         backgroundBlendMode: BlendMode.color,
         image: DecorationImage(
-            image: AssetImage("lib/assets/pngs/work1bg_stars.jpg",
-                
+            image: AssetImage(
+              "lib/assets/pngs/work1bg_stars.jpg",
             ),
-      
 
             // colorFilter: ColorFilter.mode(),
             colorFilter: ColorFilter.mode(
-                Colors.black.withOpacity(0.2), BlendMode.darken),
+                Colors.black.withOpacity(0.5), BlendMode.darken),
             fit: BoxFit.fill),
       ),
       child: Stack(
@@ -67,48 +60,47 @@ class _Work1State extends State<Work1> {
               ),
               duration: Duration(seconds: 2),
               builder: (BuildContext _, Color color, widget) {
-                return ColorFiltered(
-                  colorFilter: ColorFilter.mode(color, BlendMode.color),
-                  child: Image.asset(
-                    'assets/images/myPortraits/portraitDistortion.png',
-                         cacheHeight: 213,
-      cacheWidth: 392,
-                    color: Theme.of(context).accentColor,
-                    fit: BoxFit.fitHeight,
-                  ),
+                return Image.asset(
+                  'assets/images/myPortraits/portraitDistortion.png',
+                  //  cacheHeight: 213,
+                  // cacheWidth: 392,
+                  width: double.infinity,
+                  height: double.infinity,
+                  // color: Theme.of(context).accentColor,
+                  fit: BoxFit.fitHeight,
                 );
               },
             ),
           ),
-          ParallaxStack(
-            // dragCurve: Curves.deceerate,
-            layers: [
-              ParallaxLayer(
-                zRotation: 0.03,
-                yRotation: 0.05,
-                xRotation: 0.06,
-                xOffset: 20,
-                yOffset: 20,
-                child: Center(
-                  child: Container(
-                    width: 10000,
-                    height: 10000,
-                    color: Colors.black.withOpacity(.3),
-                    child: ColorFiltered(
-                      colorFilter:
-                          ColorFilter.mode(Color(0xf223344), BlendMode.color),
-                      child: Image.asset(
-                        'assets/images/myPortraits/portraitDistortion.png',
-                             cacheHeight: 213,
-      cacheWidth: 392,
-                        fit: BoxFit.fitHeight,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+          // ParallaxStack(
+          //   // dragCurve: Curves.deceerate,
+          //   layers: [
+          //     ParallaxLayer(
+          //       zRotation: 0.03,
+          //       yRotation: 0.05,
+          //       xRotation: 0.06,
+          //       xOffset: 20,
+          //       yOffset: 20,
+          //       child: Center(
+          //         child: Container(
+          //           width: double.infinity,
+          //           height: double.infinity,
+          //           color: Colors.black.withOpacity(.3),
+          //           child: ColorFiltered(
+          //             colorFilter:
+          //                 ColorFilter.mode(Color(0xf223344), BlendMode.color),
+          //             child: Image.asset(
+          //               'assets/images/myPortraits/portraitDistortion.png',
+          //               // cacheHeight: 213,
+          //               // cacheWidth: 392,
+          //               fit: BoxFit.fitHeight,
+          //             ),
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // ),
           Positioned(
             left: MediaQuery.of(context).size.width / 20,
             bottom: MediaQuery.of(context).size.height / 1.5,
@@ -130,6 +122,19 @@ class _Work1State extends State<Work1> {
                     fontSize: MediaQuery.of(context).size.width <= 600
                         ? MediaQuery.of(context).size.width / 20
                         : 30,
+                    color: Colors.white,
+                  ),
+            ),
+          ),
+          Positioned(
+            left: MediaQuery.of(context).size.width / 20,
+            bottom: MediaQuery.of(context).size.height / 1.7,
+            child: Text(
+              "I intend to make a living by solving YOUR problems.",
+              style: Theme.of(context).textTheme.headline1?.copyWith(
+                    fontSize: MediaQuery.of(context).size.width <= 600
+                        ? MediaQuery.of(context).size.width / 20
+                        : 20,
                     color: Colors.white,
                   ),
             ),
@@ -206,10 +211,8 @@ class _Work1State extends State<Work1> {
                         animatedTexts: [
                           RotateAnimatedText(
                             'Developer',
-                            textStyle: Theme.of(context)
-                                .textTheme
-                                .headline1
-                                ?.copyWith(
+                            textStyle:
+                                Theme.of(context).textTheme.headline1?.copyWith(
                               shadows: [
                                 Shadow(
                                     blurRadius: 20,
@@ -217,10 +220,9 @@ class _Work1State extends State<Work1> {
                                     offset: Offset(20, 20))
                               ],
                               color: Colors.white,
-                              fontSize:
-                                  MediaQuery.of(context).size.width <= 600
-                                      ? MediaQuery.of(context).size.width / 15
-                                      : 40,
+                              fontSize: MediaQuery.of(context).size.width <= 600
+                                  ? MediaQuery.of(context).size.width / 15
+                                  : 40,
                             ),
                             rotateOut: false,
                             alignment: Alignment.center,
@@ -228,10 +230,8 @@ class _Work1State extends State<Work1> {
                           ),
                           RotateAnimatedText(
                             'Software Engineer',
-                            textStyle: Theme.of(context)
-                                .textTheme
-                                .headline1
-                                ?.copyWith(
+                            textStyle:
+                                Theme.of(context).textTheme.headline1?.copyWith(
                               shadows: [
                                 Shadow(
                                     blurRadius: 20,
@@ -239,10 +239,9 @@ class _Work1State extends State<Work1> {
                                     offset: Offset(20, 20))
                               ],
                               color: Colors.white,
-                              fontSize:
-                                  MediaQuery.of(context).size.width <= 600
-                                      ? MediaQuery.of(context).size.width / 15
-                                      : 40,
+                              fontSize: MediaQuery.of(context).size.width <= 600
+                                  ? MediaQuery.of(context).size.width / 15
+                                  : 40,
                             ),
                             rotateOut: false,
                             alignment: Alignment.center,
@@ -250,10 +249,8 @@ class _Work1State extends State<Work1> {
                           ),
                           RotateAnimatedText(
                             'Computer Scientist',
-                            textStyle: Theme.of(context)
-                                .textTheme
-                                .headline1
-                               ?.copyWith(
+                            textStyle:
+                                Theme.of(context).textTheme.headline1?.copyWith(
                               shadows: [
                                 Shadow(
                                     blurRadius: 20,
@@ -261,10 +258,9 @@ class _Work1State extends State<Work1> {
                                     offset: Offset(20, 20))
                               ],
                               color: Colors.white,
-                              fontSize:
-                                  MediaQuery.of(context).size.width <= 600
-                                      ? MediaQuery.of(context).size.width / 15
-                                      : 40,
+                              fontSize: MediaQuery.of(context).size.width <= 600
+                                  ? MediaQuery.of(context).size.width / 15
+                                  : 40,
                             ),
                             rotateOut: false,
                             alignment: Alignment.center,

@@ -5,8 +5,9 @@ ThemeData theme() {
   return ThemeData(
     iconTheme: IconThemeData(color: Colors.white),
     primaryIconTheme: IconThemeData(color: Colors.black),
-    backgroundColor: Color(0xffffff22),
-    accentColor: Color(0xffffff22),
+    backgroundColor: Color(0xffffff00),
+    primaryColor: Color(0xffffff00),
+    accentColor: Color(0xffffff00),
     primaryColorDark: Colors.black,
     textTheme: TextTheme(
         button: GoogleFonts.roboto(
@@ -15,12 +16,12 @@ ThemeData theme() {
             shadows: [
               Shadow(
                 blurRadius: 10,
-                color: Color(0xffffff22),
+                color: Color(0xffffff00),
               )
             ]),
         headline1: GoogleFonts.aclonica(
           fontSize: 40,
-          color: Color(0xffffff22),
+          color: Color(0xffffff00),
           shadows: [
             Shadow(
               blurRadius: 20,
@@ -30,7 +31,7 @@ ThemeData theme() {
         ),
         headline2: GoogleFonts.montserrat(),
         headline3: GoogleFonts.arvo(
-            color: Color(0xffffff22), fontWeight: FontWeight.w700),
+            color: Color(0xffffff00), fontWeight: FontWeight.w700),
         bodyText1: GoogleFonts.mulish(
             fontSize: 16,
             fontWeight: FontWeight.w100,
@@ -40,7 +41,7 @@ ThemeData theme() {
             // shadows: [
             //   Shadow(
             //     blurRadius: 20,
-            //     color: Color(0xffffff22),
+            //     color: Color(0xffffff00),
             //   )
             // ],
             )),

@@ -11,14 +11,17 @@ class Travel extends StatefulWidget {
 class _TravelState extends State<Travel> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SingleChildScrollView(
+      
+
 
       child: Column(
+        
         children: [
           Travel1_main(),
+          // Container(height: 1000,color: Color(0xff1d0203),),
         ],
       ),
-      
     );
   }
 }

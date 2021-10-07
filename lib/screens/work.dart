@@ -25,20 +25,18 @@ class _WorkState extends State<Work> {
 
   @override
   // void initState() {
-    // super.initState();
-        
+  // super.initState();
 
-    
-    // homeScrollController.addListener(() {
-    //   setState(() {
-    //     print(homeScrollController.offset);
-    //     print("homeScrollController.offset");
+  // homeScrollController.addListener(() {
+  //   setState(() {
+  //     print(homeScrollController.offset);
+  //     print("homeScrollController.offset");
 
-    //     // if (homeScrollController.offset > 650) {
-    //     //   programmerLottieAppears = true;
-    //     // }
-    //   });
-    // });
+  //     // if (homeScrollController.offset > 650) {
+  //     //   programmerLottieAppears = true;
+  //     // }
+  //   });
+  // });
   // }
 
   void dispose() {
@@ -51,26 +49,23 @@ class _WorkState extends State<Work> {
 
   @override
   Widget build(BuildContext context) {
-
-        isMobile = MediaQuery.of(context).size.width < 600;
-
+    isMobile = MediaQuery.of(context).size.width < 600;
 
     return SingleChildScrollView(
-        // controller: homeScrollController,
-        child: Column(
-          children: [
-            Work1(), //my picture and HI
-            Work21(), // three taps and skills
-            Work22(), //misc
-          
-            Work23(), //misc
-            Work24(), //misc
-            Work31(), //bye bye and footer
-            WorkAppDev(),
-            WorkWebDev(),
-          ],
-        ),
-      
+      // controller: homeScrollController,
+      child: Column(
+        children: [
+          Work1(), //my picture and HI
+          Work21(), // three taps and skills
+          Work22(), //misc
+
+          Work23(), //misc
+          Work24(), //misc
+          Work31(), //bye bye and footer
+          WorkAppDev(),
+          WorkWebDev(),
+        ],
+      ),
     );
   }
 }

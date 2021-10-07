@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String currentBuildWhat = 'home';
+  String currentBuildWhat = 'work';
   bool isMobile = false;
 
   @override
@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
     // if (isMobile) {
     //   print('its mobile');
     // } else
-    //   print('its desktop');
+    //   print('its desktop');t
     return Scaffold(
       drawerScrimColor: Colors.black.withOpacity(.3),
       drawer: Drawer(
@@ -112,8 +112,8 @@ class _HomePageState extends State<HomePage> {
         // child: buildHome(currentBuildWhat),
 
         // work by default
-        // child: buildHome("travel"),
-        child: buildHome(currentBuildWhat),
+        child: buildHome("work"),
+        // child: buildHome(currentBuildWhat),
       ),
       extendBodyBehindAppBar: true,
     );
@@ -121,18 +121,11 @@ class _HomePageState extends State<HomePage> {
 }
 
 Widget buildHome(String buildWhat) {
-  if (buildWhat == 'home') 
-    return Home();
-  if (buildWhat == 'work')
-    return Work();
-  if (buildWhat == 'travel')
-    return Travel();
-  if (buildWhat == 'about')
-    return About();
-  if (buildWhat == 'people')
-    return People();
-  
-  
-  
+  if (buildWhat == 'home') return Home();
+  if (buildWhat == 'work') return Work();
+  if (buildWhat == 'travel') return Travel();
+  if (buildWhat == 'about') return About();
+  if (buildWhat == 'people') return People();
+
   return Text('sd');
 }
